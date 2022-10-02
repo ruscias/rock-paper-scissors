@@ -59,3 +59,15 @@ function createNewUser() {
 // We need to have a way to determine a winner within a round
 // If we are playing multiple games (best x ot of 5) we need to keep track of the winners across games 
 
+/*
+function main() {
+    let numberOfRounds = getRounds();
+    console.log(numberOfRounds);
+    let userOne = createNewUser();
+    console.log(userOne);
+    let userTwo = createNewUser();
+    console.log(userTwo);
+}
+
+main();
+*/
