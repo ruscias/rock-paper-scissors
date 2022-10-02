@@ -44,13 +44,45 @@ function createNewUser() {
 
 // define function getRandomChoice to return a whole positive number between 0 and 2
 function getRandomChoice() {
-  return Math.floor(Math.random() * 3)
+  return Math.floor(Math.random() * 3);
 }
 
 // define function getChoice() to get input for round
-//   if user is human 
-//     prompt for choice of rock, paper, or scissors and require they give me one of these 
-//     map user string to int rock = 0, paper = 1, scissors = 2
+function getChoice(user) {
+  
+  let userChoice;
+
+  // if user is human   
+  if (user.isHuman === true) {
+    let keepGoing = true;
+    // prompt for choice of rock, paper, or scissors and require they give me one of these
+    while (keepGoing) {
+      userChoiceString = prompt('Please select rock, paper, or scissors: ')
+      if (userChoiceString === 'rock' || userChoiceString === 'paper' || userChoiceString === 'scissors') {
+        keepGoing = false;  
+      }
+    }
+    // map user string to int rock = 0, paper = 1, scissors = 2
+    switch (userChoiceString) {
+      case 'rock':
+        userChoice = 0; 
+        break
+      case 'paper':
+        userChoice = 1;
+        break
+      case 'scissors':
+        userChoice = 2;
+        break
+      default:
+        userChoice = -1;
+    }
+  } else {
+    // user is computer so getRandomChoice
+    userChoice = getRandomChoice();
+  }
+  return userChoice;
+}
+
 //   else 
 //     get random number with getRandomChoice
 
