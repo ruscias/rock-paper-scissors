@@ -42,7 +42,10 @@ function createNewUser() {
   }
 }
 
-// define function getRandomChoice to return a whole positive number between 0 and 2 
+// define function getRandomChoice to return a whole positive number between 0 and 2
+function getRandomChoice() {
+  return Math.floor(Math.random() * 3)
+}
 
 // define function getChoice() to get input for round
 //   if user is human 
