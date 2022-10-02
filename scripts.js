@@ -83,10 +83,45 @@ function getChoice(user) {
   return userChoice;
 }
 
-//   else 
-//     get random number with getRandomChoice
-
 // define function getRoundWinner(userOneChoice,userTwoChoice) to identifty round winner
+function getRoundWinner(userOneChoice,userTwoChoice) {
+
+  if (Math.abs(userOneChoice) > 2 || Math.abs(userTwoChoice) > 2) {
+    return -1;
+  }
+
+  if (typeof userOneChoice !== 'number' || userTwoChoice !== 'number') {
+    return -2;
+  }
+
+  let scoreDifference = userOneChoice - userTwoChoice;
+  
+  if (scoreDifference === 0) {
+    return 0;
+  } else if (scoreDifference === -2 || scoreDifference === 1) {
+    return 1;
+  } else {
+    return 2;
+  }
+}
+
+console.log(getRoundWinner(0,0));
+console.log(getRoundWinner(0,1));
+console.log(getRoundWinner(0,2));
+
+console.log(getRoundWinner(1,0));
+console.log(getRoundWinner(1,1));
+console.log(getRoundWinner(1,2));
+
+console.log(getRoundWinner(2,0));
+console.log(getRoundWinner(2,1));
+console.log(getRoundWinner(2,2));
+
+console.log(`what the actual... ${getRoundWinner('a',0)}`);
+console.log(getRoundWinner(0,4));
+console.log(getRoundWinner(33,2));
+
+console.log(`number type: ${typeof 2 === 'number'}`);
 
 // define function updateUserWins(roundWinner) to update the total wins of the user who won the round
 
