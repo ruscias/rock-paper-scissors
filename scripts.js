@@ -57,6 +57,11 @@ function createNewUser() {
 
 // define function playRound() 
 
+// define function getWinnerOverall() to report the winner of all rounds
+
+
+
+
 
 // We need to have a way to indicate whether the user is supposed to be a human or the computer - done
 // We need to have a way to specify rounds - done
@@ -89,7 +94,9 @@ function main() {
     playRound();
   }
   
-  getWinnerOverall();
+  winnerOverall = getWinnerOverall();
+
+  console.log(winnerOverall)
 
 } 
 
