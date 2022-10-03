@@ -114,9 +114,7 @@ function updateUserWins(roundWinner) {
 
 // define function playRound() 
 function playRound() {
-  // getChoice() from userOne. Store as number in value userOneChoice 
-  let userOneChoice = getChoice(userOne);
-  // getChoice from userTwo. Store as number in value userTwoChoice
+  // getChot from userTwo. Store as number in value userTwoChoice
   let userTwoChoice = getChoice(userTwo);
   // getRoundWinner() and store in a number variable roundWinner
   let roundWinner = getRoundWinner(userOneChoice,userTwoChoice);
@@ -125,7 +123,23 @@ function playRound() {
 }
 
 // define function getWinnerOverall() to report the winner of all rounds
+function getWinnerOverall() {
+  if ( userOne.wins === userTwo.wins) {
+    return 'It\'s a tie!';
+  } else if ( userOne.wins > userTwo.wins ) {
+    return 'User One wins!';
+  } else {
+    return 'User Two wins!';
+  }
+}
 
+let userOne = new User(true);
+let userTwo = new User(false);
+
+userOne.wins = 3;
+userTwo.wins = 3;
+
+console.log(getWinnerOverall());
 
 // We need to have a way to indicate whether the user is supposed to be the computer - done
 // We need to have a way to specify rounds - done
