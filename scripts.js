@@ -105,25 +105,16 @@ function getRoundWinner(userOneChoice,userTwoChoice) {
   }
 }
 
-console.log(getRoundWinner(0,0));
-console.log(getRoundWinner(0,1));
-console.log(getRoundWinner(0,2));
-
-console.log(getRoundWinner(1,0));
-console.log(getRoundWinner(1,1));
-console.log(getRoundWinner(1,2));
-
-console.log(getRoundWinner(2,0));
-console.log(getRoundWinner(2,1));
-console.log(getRoundWinner(2,2));
-
-console.log(`what the actual... ${getRoundWinner('a',0)}`);
-console.log(getRoundWinner(0,4));
-console.log(getRoundWinner(33,2));
-
-console.log(`number type: ${typeof 2 === 'number'}`);
-
 // define function updateUserWins(roundWinner) to update the total wins of the user who won the round
+function updateUserWins(roundWinner) {
+  if (roundWinner === 1) {
+    userOne.wins++;
+  } else if (roundWinner === 2) {
+    userTwo.wins++;
+  } else {
+    console.log(`Invalid argument provided: ${roundWinner}\nExpecting either number 1 or 2.`)
+  }
+}
 
 // define function playRound() 
 
