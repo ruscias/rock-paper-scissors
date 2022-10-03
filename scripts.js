@@ -114,7 +114,9 @@ function updateUserWins(roundWinner) {
 
 // define function playRound() 
 function playRound() {
-  // getChot from userTwo. Store as number in value userTwoChoice
+  // getChoice from userOne. Store as number in value userOneChoice
+  let userOneChoice = getChoice(userOne);
+  // getChoice from userTwo. Store as number in value userTwoChoice
   let userTwoChoice = getChoice(userTwo);
   // getRoundWinner() and store in a number variable roundWinner
   let roundWinner = getRoundWinner(userOneChoice,userTwoChoice);
@@ -132,14 +134,6 @@ function getWinnerOverall() {
     return 'User Two wins!';
   }
 }
-
-let userOne = new User(true);
-let userTwo = new User(false);
-
-userOne.wins = 3;
-userTwo.wins = 3;
-
-console.log(getWinnerOverall());
 
 // We need to have a way to indicate whether the user is supposed to be the computer - done
 // We need to have a way to specify rounds - done
@@ -159,13 +153,17 @@ console.log(getWinnerOverall());
 // We need to have a way to determine a winner within a round - done
 // If we are playing multiple games (best x ot of 5) we need to keep track of the winners across games - done 
 
-/*
+let userOne;
+let userTwo;
+
 function main() {
+
   let numberOfRounds = getRounds(); 
   console.log(numberOfRounds); 
-  let userOne = new User(true); 
+
+  userOne = createNewUser(); 
   console.log(userOne); 
-  let userTwo = new User(false); 
+  userTwo = createNewUser(); 
   console.log(userTwo);
   
   for (let i = 0 ; i < numberOfRounds ; i++ ) {
@@ -173,10 +171,8 @@ function main() {
   }
   
   winnerOverall = getWinnerOverall();
-
-  console.log(winnerOverall)
-
+  
+  console.log(winnerOverall);
 } 
 
-main();
-*/
+//main();
