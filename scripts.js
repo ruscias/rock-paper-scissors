@@ -90,10 +90,6 @@ function getRoundWinner(userOneChoice,userTwoChoice) {
     return -1;
   }
 
-  if (typeof userOneChoice !== 'number' || userTwoChoice !== 'number') {
-    return -2;
-  }
-
   let scoreDifference = userOneChoice - userTwoChoice;
   
   if (scoreDifference === 0) {
@@ -111,20 +107,27 @@ function updateUserWins(roundWinner) {
     userOne.wins++;
   } else if (roundWinner === 2) {
     userTwo.wins++;
-  } else {
-    console.log(`Invalid argument provided: ${roundWinner}\nExpecting either number 1 or 2.`)
+  } else if (roundWinner < 0) {
+    console.log(`Invalid argument provided: ${roundWinner}\nExpecting either number 1 or 2.`);
   }
 }
 
 // define function playRound() 
+function playRound() {
+  // getChoice() from userOne. Store as number in value userOneChoice 
+  let userOneChoice = getChoice(userOne);
+  // getChoice from userTwo. Store as number in value userTwoChoice
+  let userTwoChoice = getChoice(userTwo);
+  // getRoundWinner() and store in a number variable roundWinner
+  let roundWinner = getRoundWinner(userOneChoice,userTwoChoice);
+  // increment the wins property for the user who won with updateUserWins()
+  updateUserWins(roundWinner);
+}
 
 // define function getWinnerOverall() to report the winner of all rounds
 
 
-
-
-
-// We need to have a way to indicate whether the user is supposed to be a human or the computer - done
+// We need to have a way to indicate whether the user is supposed to be the computer - done
 // We need to have a way to specify rounds - done
 // We need to keep track of scores across rounds - done by User class I believe
 // We need to have a way to initiate a new round - this will be a for loop
