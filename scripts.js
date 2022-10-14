@@ -175,4 +175,4 @@ function main() {
   console.log(winnerOverall);
 } 
 
-//main();
+main();
