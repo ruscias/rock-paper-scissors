@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <title>RPS Game</title>
 </head>
 <body>
-    <script src="scripts.js"></script>
+  <div class="header">Virtual Rock Paper Scissors</div>
+  <div class="content">
+    <div class="user-selection-container">
+      <div class="user-one">
+        <h1>User One</h1>
+        <div id="user-one-selection" class="user-one-selection"></div>
+      </div>
+      <div class="user-two">
+        <h1>User Two</h1>
+        <div id="user-two-selection" class="user-two-selection"></div>
+      </div>
+    </div>
+    <div class="winners">
+      <div class="winner-card">
+        <h3>Round Winner</h3>
+        <div id="wins-this-round"></div>
+      </div>
+      <div class="winner-card">
+        <h3>User One Wins</h3>
+        <div id="wins-user-one"></div>
+      </div>
+      <div class="winner-card">
+        <h3>User One Wins</h3>
+        <div id="wins-user-two"></div>
+      </div> 
+    </div>
+    <div class="buttons">
+      <button id="rock">Rock</button>
+      <button id="paper">Paper</button>
+      <button id="scissors">Scissors</button>
+    </div>
+  </div>
+  <div class="footer">Steven Rusciano - (C) Copyright 2022</div>  
 </body>
 </html>
