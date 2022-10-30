@@ -19,6 +19,7 @@ function updateUserInput() {
     userTwoDisplay.innerText = "";
     activeUser = 1;
   } else {
+    userOneDisplay.innerText = ""
     userTwoDisplay.innerText = this.id;
     activeUser = 0;
   }
