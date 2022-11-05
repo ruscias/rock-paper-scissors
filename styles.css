@@ -14,14 +14,14 @@ button:hover {
   top: -3px;
 }
 
-#mark_button {
+#mark {
   background-image: url(resources/mark.jpg);
 }
 
-#tom_button {
+#tom {
   background-image: url(resources/tom.jpg);
 }
 
-#travis_button {
+#travis {
   background-image: url(resources/travis.jpg);
 }
