@@ -151,6 +151,12 @@ function resetGame() {
   userTwoDisplay.innerText = userTwo.wins;
   roundsPlayed = 0;
   document.getElementById('rounds-played').innerText = roundsPlayed;
+  const divForWinner = document.getElementById('winner');
+  divForWinner.innerText = 'Best of 5 (ties don\'t count!)';
+  divForWinner.className = 'wins-and-reset-header'; 
+  const computerSelectionButton =  document.getElementsByClassName('selection-computer')[0];
+  computerSelectionButton.id = '';
+  computerSelectionButton.innerText = 'Your move';
 
 }
 
