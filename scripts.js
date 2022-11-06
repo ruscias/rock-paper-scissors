@@ -8,15 +8,49 @@ class User {
 const userOne = new User(true);
 const userTwo = new User(false);
 
-console.log(userOne);
-console.log(userTwo);
+let roundsPlayed = 0;
+
+function getWinner(){
+  return 0;
+};
+
+//main()
 
 
-//set number variable roundsPlayed to 0
+// buttons is a node list. It looks and acts much like an array.
+const userSelectionButtons = document.querySelectorAll('button.selection');
+const userOneDisplay = document.getElementById('user-one-selection');
+
+userSelectionButtons.forEach( (button) => {
+  button.addEventListener('click', playGame)
+}
+);
+
+function playGame() {
+  //backup in case user keeps trying to play
+  if (roundsPlayed === 5) {
+    return 0;
+  }
+  
+  const userOneRoundSelection = this.id;
+  console.log(userOneRoundSelection);
+  
+  
+  
+  
+  //increment roundsPlayed
+  roundsPlayed++;
+  //update the div displaying rounds-played
+  document.getElementById('rounds-played').innerText = roundsPlayed;
+}
+
+
 //set string variable roundWinner to tie
 //set string variable roundComputerChoice to empty
 
 //identify when userOne clicks mark or tom or travis button and capture button clicked
+
+
 //check if roundsPlayed === 5;
   //if yes, break
 //make random choice for userTwo
