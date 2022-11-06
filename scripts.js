@@ -76,8 +76,20 @@ function getRoundWinner(userOneChoice,userTwoChoice) {
   }
 }
 
-function updateUserWins() {
-  return 0;
+function updateUserWins(roundWinner) {
+  if (roundWinner === 1) {
+    userOne.wins++;
+    //increment roundsPlayed
+    roundsPlayed++;
+    //if userOne had the win, update div#user-one-wins-display 
+  } else if (roundWinner === 2) {
+    userTwo.wins++;
+    //increment roundsPlayed
+    roundsPlayed++;
+    //else update div#user-two-wins-display
+  } else if (roundWinner < 0) {
+    console.log(`Invalid argument provided: ${roundWinner}\nExpecting either number 0 (tie), 1 (userOne wins), or 2 (computer wins).`);
+  }
 }
 
 
@@ -101,12 +113,10 @@ function playRound() {
 
   //call updateUserWins() on roundWinner
   updateUserWins(roundWinner);
-
-    //if userOne had the win, update div#user-one-wins-display 
-    //else update div#user-two-wins-display
+  console.log(userOne);
+  console.log(userTwo);
   
-  //increment roundsPlayed
-  roundsPlayed++;
+
   //update the div displaying rounds-played
   document.getElementById('rounds-played').innerText = roundsPlayed;
 
