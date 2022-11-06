@@ -11,7 +11,21 @@ const userTwo = new User(false);
 let roundsPlayed = 0;
 
 function getNumberFromButtonId(buttonId) {
-  return buttonId;
+  let userChoice;
+  switch (buttonId) {
+    case 'mark':
+      userChoice = 0; 
+      break
+    case 'tom':
+      userChoice = 1;
+      break
+    case 'travis':
+      userChoice = 2;
+      break
+    default:
+      userChoice = -1;
+  }
+  return userChoice;
 }
 
 function randomChoice() {
