@@ -28,8 +28,8 @@ function getNumberFromButtonId(buttonId) {
   return userChoice;
 }
 
-function randomChoice() {
-  return 0;
+function getRandomChoice() {
+  return Math.floor(Math.random() * 3);
 }
 
 function updateUserWins() {
@@ -50,7 +50,9 @@ function playRound() {
   const userOneRoundSelection = getNumberFromButtonId(this.id);
   console.log(userOneRoundSelection);
   
-  //call randomChoice() function to get a random choice and store in variable userTwoRoundSelection
+  //call getRandomChoice() function to get a random choice and store in variable userTwoRoundSelection 
+  userTwoRoundSelection = getRandomChoice();
+  console.log(userTwoRoundSelection);
 
   //call displayComputerChoice() using userTwoRoundSelection to show user the computer's choice on the screen
 
