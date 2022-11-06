@@ -96,6 +96,15 @@ function updateUserWins(roundWinner) {
   }
 }
 
+function getWinnerOverall() {
+  if ( userOne.wins === userTwo.wins) {
+    return 'It\'s a tie!';
+  } else if ( userOne.wins > userTwo.wins ) {
+    return 'You win!';
+  } else {
+    return 'Computer wins!';
+  }
+}
 
 function playRound() {
   //backup in case user keeps trying to play
@@ -124,10 +133,13 @@ function playRound() {
   //update the div displaying rounds-played
   document.getElementById('rounds-played').innerText = roundsPlayed;
 
-  //check if roundsPlayed === 5 
-  //if yes, 
-    //display winner 
+  if (roundsPlayed === 5) {
+    const divForWinner = document.getElementById('winner');
+    const result = getWinnerOverall();
+    divForWinner.innerText = result; 
     //apply game-over class to div#winner
+    divForWinner.className += ' game-over';
+  } 
 }
 
 //main()...
