@@ -32,13 +32,40 @@ function getRandomChoice() {
   return Math.floor(Math.random() * 3);
 }
 
-function updateUserWins() {
-  return 0;
+function displayComputerChoice(userTwoRoundSelection) {
+  
+  let newId = '';
+
+  console.log(`it me: ${userTwoRoundSelection}`);
+
+  switch (userTwoRoundSelection) {
+    case 0:
+      newId = 'mark';
+      break
+    case 1:
+      newId = 'tom';
+      break
+    case 2:
+      newId = 'travis';
+      break
+    default:
+      newId = '';
+  }
+
+  const computerSelectionButton = document.getElementsByClassName('selection-computer')[0];
+
+  computerSelectionButton.id = newId;
+  computerSelectionButton.innerText = newId.toUpperCase();
 }
 
 function getRoundWinner() {
   return 0;
 }
+
+function updateUserWins() {
+  return 0;
+}
+
 
 function playRound() {
   //backup in case user keeps trying to play
@@ -55,6 +82,7 @@ function playRound() {
   console.log(userTwoRoundSelection);
 
   //call displayComputerChoice() using userTwoRoundSelection to show user the computer's choice on the screen
+  displayComputerChoice(userTwoRoundSelection);
 
   //call getRoundWinner() to determine round winner and store in variable roundWinner
 
