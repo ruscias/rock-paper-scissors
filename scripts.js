@@ -36,8 +36,6 @@ function displayComputerChoice(userTwoRoundSelection) {
   
   let newId = '';
 
-  console.log(`it me: ${userTwoRoundSelection}`);
-
   switch (userTwoRoundSelection) {
     case 0:
       newId = 'mark';
@@ -58,8 +56,24 @@ function displayComputerChoice(userTwoRoundSelection) {
   computerSelectionButton.innerText = newId.toUpperCase();
 }
 
-function getRoundWinner() {
-  return 0;
+function getRoundWinner(userOneChoice,userTwoChoice) {
+
+  if (Math.abs(userOneChoice) > 2 || Math.abs(userTwoChoice) > 2) {
+    return -1;
+  }
+
+  const scoreDifference = userOneChoice - userTwoChoice;
+  
+  if (scoreDifference === 0) {
+    // if tie
+    return 0;
+  } else if (scoreDifference === -2 || scoreDifference === 1) {
+    // userOne wins
+    return 1;
+  } else {
+    // userTwo wins
+    return 2;
+  }
 }
 
 function updateUserWins() {
@@ -75,18 +89,19 @@ function playRound() {
   
   //call getNumberFromButtonId() on this.id and store in variable userOneRoundSelection  
   const userOneRoundSelection = getNumberFromButtonId(this.id);
-  console.log(userOneRoundSelection);
   
   //call getRandomChoice() function to get a random choice and store in variable userTwoRoundSelection 
   userTwoRoundSelection = getRandomChoice();
-  console.log(userTwoRoundSelection);
 
   //call displayComputerChoice() using userTwoRoundSelection to show user the computer's choice on the screen
   displayComputerChoice(userTwoRoundSelection);
 
   //call getRoundWinner() to determine round winner and store in variable roundWinner
+  roundWinner = getRoundWinner(userOneRoundSelection,userTwoRoundSelection);
 
   //call updateUserWins() on roundWinner
+  updateUserWins(roundWinner);
+
     //if userOne had the win, update div#user-one-wins-display 
     //else update div#user-two-wins-display
   
