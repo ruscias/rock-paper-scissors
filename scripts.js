@@ -81,12 +81,16 @@ function updateUserWins(roundWinner) {
     userOne.wins++;
     //increment roundsPlayed
     roundsPlayed++;
-    //if userOne had the win, update div#user-one-wins-display 
+    //if userOne had the win, update div#user-one-wins-display
+    const userOneDisplay = document.getElementById('user-one-wins-display')
+    userOneDisplay.innerText = userOne.wins; 
   } else if (roundWinner === 2) {
     userTwo.wins++;
     //increment roundsPlayed
     roundsPlayed++;
-    //else update div#user-two-wins-display
+    //if userTwo had the win, update div#user-two-wins-display
+    const userTwoDisplay = document.getElementById('user-two-wins-display')
+    userTwoDisplay.innerText = userTwo.wins;
   } else if (roundWinner < 0) {
     console.log(`Invalid argument provided: ${roundWinner}\nExpecting either number 0 (tie), 1 (userOne wins), or 2 (computer wins).`);
   }
