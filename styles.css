@@ -1,4 +1,100 @@
-button {
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+div.header,
+div.footer {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgb(96, 0, 98);
+}
+
+span.header-title {
+  font-size: 24px;
+}
+
+div.selection-and-rounds {
+  height: 50vh;
+  display: flex;
+  background-color: rgb(217, 154, 224);
+}
+
+div.user-container {
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+div.selection-and-rounds-header {
+  padding-top: 8px;
+  height: 18vh;
+  font-size: 24px;
+}
+
+div.rounds-container {
+  width:20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(192, 144, 210);  
+}
+
+div.rounds-played {
+  font-size: 48px;
+  margin-top: 4vh;
+}
+
+div.wins-and-reset {
+  height: 30vh;
+  background-color: rgb(147, 96, 149);
+  display: flex;
+}
+
+div.user-wins-container {
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.winner-and-reset-container {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.wins-and-reset-header {
+  padding-top: 8px;
+  font-size: 24px;
+  height: 12vh;
+}
+
+div.user-wins-display {
+  font-size: 48px;
+}
+
+div.game-over {
+  color: chartreuse;
+  font-size: 48px;
+  font-weight: 900;
+  top: -3px;
+}
+
+button#reset {
+  margin-top: 24px;
+  font-size: 24px;
+}
+
+button.selection {
   color: white;
   font-weight: 900;
   font-size: 24px;
@@ -9,7 +105,23 @@ button {
   -webkit-text-stroke: 1px black;
 }
 
-button:hover {
+button.selection-computer {
+  color: white;
+  font-weight: 900;
+  font-size: 24px;1
+  width: 100px;
+  height: 100px;
+  background-size: 100%;
+  border-radius: 8px;
+  -webkit-text-stroke: 1px black;
+}
+
+button.selection-computer:active {
+  border-style: outset;
+}
+
+button.selection:hover,
+button#reset:hover {
   position: relative;
   top: -3px;
 }

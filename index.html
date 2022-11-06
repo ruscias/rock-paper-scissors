@@ -9,8 +9,47 @@
   <title>RPS Game</title>
 </head>
 <body>
-  <button class="selection" id="mark">MARK</button>
-  <button class="selection" id="tom">TOM</button>
-  <button class="selection" id="travis">TRAVIS</button>
+  <div class="header">
+    <span class="header-title">The Mark, Tom, and Travis Show</span>
+  </div>
+  <div class="selection-and-rounds">
+    <div class="user-container">
+      <div class="selection-and-rounds-header">Choose your fighter:</div>
+      <div class="user-selection" id="one">
+        <button class="selection" id="mark">MARK</button>
+        <button class="selection" id="tom">TOM</button>
+        <button class="selection" id="travis">TRAVIS</button>
+      </div>
+    </div>
+    <div class="rounds-container">
+      <div class="selection-and-rounds-header">Rounds Played:</div>
+      <div class="rounds-played" id="rounds-played">0</div> 
+    </div>
+    <div class="user-container">
+      <div class="selection-and-rounds-header">Computer:</div>
+      <div class="user-selection" id="two">
+        <button class="selection-computer" id="travis">TRAVIS</button>
+      </div>
+    </div>
+  </div>
+  <div class="wins-and-reset">
+    <div class="user-wins-container">
+      <div class="wins-and-reset-header">User One Wins:</div>
+      <div class="user-wins-display">0</div>
+    </div>
+    <div class="winner-and-reset-container">
+      <div class="wins-and-reset-header" id="winner">You win!</div>
+      <div class="reset">
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+    <div class="user-wins-container">
+      <div class="wins-and-reset-header">Computer's Wins:</div>
+      <div class="user-wins-display">0</div>
+    </div>
+  </div>
+  <div class="footer">
+    <span class="footer-title">Steven Rusciano 2022 (C)</span>
+  </div>
 </body>
 </html>
