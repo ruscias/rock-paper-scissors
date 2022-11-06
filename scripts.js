@@ -10,3 +10,27 @@ const userTwo = new User(false);
 
 console.log(userOne);
 console.log(userTwo);
+
+
+//set number variable roundsPlayed to 0
+//set string variable roundWinner to tie
+//set string variable roundComputerChoice to empty
+
+//identify when userOne clicks mark or tom or travis button and capture button clicked
+//check if roundsPlayed === 5;
+  //if yes, break
+//make random choice for userTwo
+//map computer choice from number to string and store in roundComputerChoice
+//display userTwo choice in userTwo section by updating id of div.selection-computer to mark or tom or travis
+//determine winner and record either userOne, userTwo, or tie
+// if there was a tie, ignore the round and await new input
+  //else increment the roundsPlayed variable
+  //update the div#rounds-played to the new value of roundsPlayed
+//if userOne had the win, update div#user-one-wins-display 
+  //else update div#user-two-wins-display
+//check if roundsPlayed === 5 
+
+  //if yes, 
+    //display winner 
+    //apply game-over class to div#winner
+
