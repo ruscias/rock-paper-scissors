@@ -142,11 +142,23 @@ function playRound() {
   } 
 }
 
+function resetGame() {
+  userOne.wins = 0;
+  const userOneDisplay = document.getElementById('user-one-wins-display')
+  userOneDisplay.innerText = userOne.wins; 
+  userTwo.wins = 0;
+  const userTwoDisplay = document.getElementById('user-two-wins-display')
+  userTwoDisplay.innerText = userTwo.wins;
+  roundsPlayed = 0;
+  document.getElementById('rounds-played').innerText = roundsPlayed;
+
+}
+
 //main()...
 
 // buttons is a node list. It looks and acts much like an array.
 const userSelectionButtons = document.querySelectorAll('button.selection');
-const userOneDisplay = document.getElementById('user-one-selection');
+const resetButton = document.querySelector('button#reset');
 
 //add click event listener to mark, tom, and travis buttons
 //when mark, tom, or travis button is clicked, call function playRound()
@@ -154,6 +166,7 @@ userSelectionButtons.forEach( (button) => {
   button.addEventListener('click', playRound)
 });
 
+resetButton.addEventListener('click',resetGame)
 
 
   
