@@ -48,22 +48,27 @@ function playGame() {
 //set string variable roundWinner to tie
 //set string variable roundComputerChoice to empty
 
-//identify when userOne clicks mark or tom or travis button and capture button clicked
+//add click event listener to mark, tom, and travis buttons
+//when mark, tom, or travis button is clicked, call function playRound()
 
+//define playRound function()
+  //if roundsPlayed === 5 return 0;
+  //call getNumberFromButtonId() on this.id and store in variable userOneRoundSelection  
 
-//check if roundsPlayed === 5;
-  //if yes, break
-//make random choice for userTwo
-//map computer choice from number to string and store in roundComputerChoice
-//display userTwo choice in userTwo section by updating id of div.selection-computer to mark or tom or travis
-//determine winner and record either userOne, userTwo, or tie
-// if there was a tie, ignore the round and await new input
-  //else increment the roundsPlayed variable
+  //call randomChoice() function to get a random choice and store in variable userTwoRoundSelection
+
+  //call displayComputerChoice() using userTwoRoundSelection to show user the computer's choice on the screen
+
+  //call getRoundWinner() to determine round winner and store in variable roundWinner
+
+  //call updateUserWins on roundWinner
+    //if userOne had the win, update div#user-one-wins-display 
+    //else update div#user-two-wins-display
+  
+  //increment roundsPlayed
   //update the div#rounds-played to the new value of roundsPlayed
-//if userOne had the win, update div#user-one-wins-display 
-  //else update div#user-two-wins-display
-//check if roundsPlayed === 5 
 
+  //check if roundsPlayed === 5 
   //if yes, 
     //display winner 
     //apply game-over class to div#winner
